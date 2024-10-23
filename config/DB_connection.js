@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'pharmacy_management'
+    host: '<host-name>',
+    user: '<user-name>',
+    password: '<your-password>',
+    database: '<your database-name>'
 });
 
 connection.connect(function(error){
