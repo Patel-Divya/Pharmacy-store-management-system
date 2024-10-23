@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="stocks.js"></script>
+</head>
+<body> 
+     <p>Manage Stock</p>
+     <div class="manage_window">
+        <table>
+            <thead id="manage_window-head"></thead>
+            <tbody id="manage_window-body"></tbody>
+         </table>
+     </div>
+     
+     <div class="add-new">
+        <button onclick="add_new()">Add new</button>
+        <div id="add_new_window">
+            <br><br><br>
+            Add New Item: <br><br>
+            <label>Name: </label><input type="text" id="add_new_name" placeholder="Enter drug name"><br>
+            <label>Manufacture: </label><input type="text" id="add_new_manufacture" placeholder="Enter manufacture"><br>
+            <label>Use: </label><input type="text" id="add_new_use" placeholder="Use of drug"><br>
+            <label>Power: </label><input type="text" id="add_new_power" placeholder="Power of drug"><br>
+            <label>Quantity: </label><input type="number" id="add_new_quantity"><br> 
+            <label>MFD: </label><input type="date" id="add_new_mfd"><br>
+            <label>EXP: </label><input type="date" id="add_new_exp"><br>
+            <label>Additional Info: </label><input type="text" id="add_new_additional_info"><br> 
+            <label>Price: </label><input type="number" id="add_new_price">
+            <button onclick="add_item()">Add</button>
+            <button onclick="cancle_add_item()">Cancle</button>
+        </div>
+     </div>
+
+     <div class="edit_window">
+        <br><br><br>
+        Edit Window: <br><br>
+        <label>Name: </label><label id="name"> </label><br>
+        <label>Manufacture: </label><label id="manufacture"> </label><br>
+        <label>Use: </label><label id="use"></label><br>
+        <label>Power: </label><label id="power"></label><br>
+        <label>Quantity: </label><input type="number" id="quantity"><br> 
+        <label>MFD: </label><label id="mfd"></label><br>
+        <label>EXP: </label><label id="exp"></label><br>
+        <label>Additional Info: </label><input type="text" id="additional_info"><br> 
+        <label>Price: </label><input type="number" id="price"> 
+        <button onclick="edited()">Ok</button>
+        <button onclick="cancle_edit()">Cancle</button>
+     </div>
+</body>
+</html>

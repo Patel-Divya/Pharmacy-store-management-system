@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="bills.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+
+        <header class="header">
+          <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+          </div>
+         
+          
+        </header>
+       
+        <aside id="sidebar">
+          <div class="sidebar-title">
+            <div class="sidebar-brand">
+              <span class="material-icons-outlined">E-Pharma</span> 
+            </div>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+          </div>
+  
+          <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+              <a href="/dashboard" style="padding: 20px 161.73px 20px 0px;">
+                <span class="material-icons-outlined">Dashboard</span> 
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="/manage-stocks" style="padding: 20px 112.4px 20px 0px;">
+                <span class="material-icons-outlined">Manage stocks</span> 
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="/bills.html" style="padding: 20px 161.73px 20px 0px;">
+                <span class="material-icons-outlined">Generate bill</span> 
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="/account.html" style="padding: 20px 161.73px 20px 0px;">
+                <span class="material-icons-outlined">Account</span> 
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="/logout.html" target="_blank" style="padding: 20px 161.73px 20px 0px;">
+                <span class="material-icons-outlined">logout</span> 
+              </a>
+            </li>
+          </ul>
+        </aside>
+       
+    <div class="generateBills">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="G" style="padding: 25px;
+                    font-size: 30px;">
+                    <label>Create bill:</label>
+                    </div>
+
+    <div class="cart">
+        <label for="customer_name">Customer name:</label>
+        <input type="text" id="customer_name" placeholder="Enter name">
+        <label for="customer_email">Customer email:</label>
+        <input type="email" id="customer_email" placeholder="Enter email">
+        <br>
+
+        <table>
+            <thead id="cart-head"></thead>
+            <tbody id="cart-body"></tbody>
+        </table>
+        <label for="total_price">Total Price: <label id="cart-total_price">0</label></label><br>
+
+        <button id="add_items" onclick="show_add_window()">Add items</button>
+        <button id="place_order" onclick="place_order()">Place Order</button>
+        <button onclick="drop_cart()">Reset cart</button>
+    </div>
+    <div class="select_stock" >
+        <table>
+            <thead id="select_stock-head"></thead>
+            <tbody id="select_stock-body" ></tbody>
+        </table>
+        <button id="select_stock_ok" onclick="select_stock_ok()">Ok</button>
+    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="edit_cart">
+                        <br><br>
+                        <label>Name: </label><label id="name"> name</label><br>
+                        <label> Manufacture : </label><label id="manufacture"> <br> manufacture  </label><br>
+                        <label>EXP: </label><label id="exp">EXP</label><br>
+                        <label for="no_of_items">No.of Items: </label><input type="number" id="no_of_items" min="1" max="999" value="1">
+                        <button onclick="update_cart()">Ok</button>
+                        <br><br>
+                    </div>
+                
+                  
+                </div>
+
+            </div>
+        </div>
+
+       </div> 
+
+
+        
+   
+</body>
+</html>

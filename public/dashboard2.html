@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="dashboard.js"></script>
+</head>
+<body>
+    <a href="/dashboard">Dashboard</a>    <a href="/bills">Generate bill</a>    <a href="/manage-stocks">Manage Stocks</a>    <a href="/logout">Logout</a> <a href="/account">Account</a>
+
+    <div>
+        <div>
+            <p>Item about to EXP: <p id="item_about_exp"></p> <button onclick="request('item_about_exp')">Show</button></p>
+            <p>About out of stock: <p id="about_out_of_stock"></p> <button onclick="request('about_out_of_stock')">Show</button></p>
+            <p>Out of stock: <p id="out_of_stock"></p> <button onclick="request('out_of_stock')">Show</button></p>
+            <p>EXPed: <p id="EXPed"></p> <button onclick="request('EXPed')">Show</button></p>
+        </div>
+        <table>
+            <thead id="data-head"></thead>
+            <tbody id="data-body"></tbody>
+        </table>
+
+        <div>
+            <p>Current stock: <p id="stock"></p> <button onclick="request('stock')">Show</button></p>
+        </div>
+        <table>
+            <thead id="stock-head"></thead>
+            <tbody id="stock-body"></tbody>
+        </table>
+    </div>
+
+    <div>
+        <br><br><br>
+        Sales:  <br><br>
+        <label>Today: </label><label id="today_sales"></label><br>
+        <label>This week:</label><label id="this_week_sales"></label><br>
+        <label>This month:</label><label id="monthly_sales"></label><br>
+        <label>Past 30 days:</label><label id="past_30_day_sales"></label><br>
+        <label>This year:</label><label id="this_year_sales"></label><br>
+    </div>
+</body>
+</html>

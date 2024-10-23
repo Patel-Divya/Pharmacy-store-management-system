@@ -1,0 +1,22 @@
+create table drugs( drug_id int primary key auto_increment, drug_name varchar(255), drug_manufacture varchar(100), quantity int(4), use varchar(255), administration_routes varchar(255), drug_ int, MFD date, EXP date);
+
+
+INSERT INTO drugs (sid, name, manufacture, drug_use, power, quantity, MFD, EXP, additional_info, price) VALUES
+(2, 'Acetaminophen', 'Johnson & Johnson', 'Pain Relief and Fever Reducer', '500mg', 40, '2022-02-28', '2024-07-20', 'Bottle of 100 tablets', 200),
+(2, 'Dexamethasone', 'Merck', 'Anti-inflammatory', '4mg', 30, '2022-03-15', '2024-05-15', 'Pack of 20 tablets', 250),
+(2, 'Metformin', 'Sanofi', 'Diabetes', '500mg', 25, '2022-01-25', '2024-06-10', 'Bottle of 60 tablets', 890),
+(2, 'Cetirizine', 'Johnson & Johnson', 'Antihistamine', '10mg', 20, '2022-03-10', '2024-06-30', 'Pack of 30 tablets', 30),
+(2, 'Albuterol', 'GSK', 'Asthma', '2mg', 25, '2022-04-01', '2024-07-10', 'Inhaler with 200 doses', 40),
+(2, 'Lisinopril', 'Merck', 'High Blood Pressure', '10mg', 30, '2022-02-28', '2024-07-23', 'Bottle of 50 tablets', 50),
+(2, 'Fluoxetine', 'Eli Lilly', 'Depression', '20mg', 35, '2022-03-15', '2024-06-15', 'Pack of 28 capsules', 60),
+(2, 'Amlodipine', 'Pfizer', 'High Blood Pressure', '5mg', 15, '2022-02-20', '2024-07-18', 'Bottle of 30 tablets', 20),
+(2, 'Ibuprofen', 'AbbVie', 'Pain Relief and Anti-inflammatory', '200mg', 40, '2022-02-15', '2024-06-05', 'Pack of 24 tablets', 550),
+(2, 'Amoxicillin', 'Pfizer', 'Antibiotic', '250mg', 25, '2022-02-20', '2024-07-12', 'Bottle of 100 capsules', 90),
+(2, 'Prednisone', 'Pfizer', 'Inflammation', '5mg', 40, '2022-01-15', '2024-05-20', 'Bottle of 30 tablets', 50),
+(2, 'Levothyroxine', 'Merck', 'Thyroid', '50mcg', 30, '2022-02-10', '2024-07-01', 'Bottle of 100 tablets', 20),
+(2, 'Simvastatin', 'Novartis', 'High Cholesterol', '20mg', 15, '2022-04-05', '2024-06-25', 'Pack of 30 tablets', 100),
+(2, 'Warfarin', 'Bristol-Myers Squibb', 'Blood Thinner', '2mg', 15, '2022-03-05', '2024-07-05', 'Bottle of 100 tablets', 340),
+(2, 'Metoprolol', 'Novartis', 'High Blood Pressure', '25mg', 20, '2022-02-28', '2024-07-15', 'Bottle of 60 tablets', 155),
+(2, 'Aspirin', 'Bayer', 'Pain Relief and Fever Reducer', '325mg', 50, '2022-04-10', '2024-04-26', 'Bottle of 200 tablets', 80),
+(2, 'Ciprofloxacin', 'Bayer', 'Antibiotic', '500mg', 30, '2022-04-15', '2024-04-26', 'Bottle of 50 tablets', 120),
+(2, 'Omeprazole', 'AstraZeneca', 'Acid Reducer', '20mg', 40, '2022-05-01', '2024-04-26', 'Pack of 28 capsules', 150);

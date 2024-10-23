@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="Screenshot (4).png">
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        background-image: url('27175317.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+    }
+
+        ::-webkit-scrollbar{
+            display: none;
+        }   
+        
+        .form ul{
+            margin: 0 -50px;
+        }
+        
+        .choice{
+            display: inline-block;
+            margin: 1px 15px 1px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px 5px 5px 5px;
+            border-radius: 10px;
+            border: 2px solid #313131;
+            transition: 0.5s ease;
+        }
+        
+        .selected{
+            border: 2px solid rgba(2, 253, 198, 0.89);
+            box-shadow: 0 0 10px rgba(2, 253, 198, 0.89);
+            color: rgba(36, 219, 179, 0.89);
+        }
+        
+        .form li:hover{
+            border: 2px solid rgba(2, 253, 198, 0.89);
+            box-shadow: 0 0 10px rgba(2, 253, 198, 0.89);
+            color: rgba(36, 219, 179, 0.89);
+        }
+        
+        .login label, .signup label{
+            font-size: 18px;
+        }
+        
+        .form{
+            color: white;
+            margin: 100px auto;
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #313131;
+        }
+        
+        .submit{
+            color: #313131;
+            font-size: 15px;
+            background-color: rgba(2, 253, 198, 0.89);
+            padding: 10px 15px;
+            margin: 20px 0 0px;
+            border: 2px solid black;
+            border-color: rgba(2, 253, 198, 0.89);
+            border-radius: 5px;
+            cursor: pointer;
+            --clr:rgba(36, 219, 179, 0.89);
+            transition: 0.3s;
+        }
+        
+        .submit:hover{
+            color: var(--clr);
+            font-weight: bolder;
+            letter-spacing: 0.25em;
+            box-shadow: 0 0 35px var(--clr);
+            background-color: #313131;
+            color: rgba(36, 219, 179, 0.89);
+        }
+        
+        .login input[type=password], input[type=email], .signup input[type=password], input[type=number], input[type=text]{
+            width: 328.7px;
+            padding: 10px;
+            margin: 5px 0px 15px 0px;
+            border: 2px;
+            border-color: white;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        
+        .login{
+            display: block; 
+        }
+        
+        .signup{
+            display: none;
+        }
+    </style>
+    <script>
+        function signupBlk(){
+            selectChoice('signup');
+
+            document.querySelector('.signup').style.display = 'block';
+            document.querySelector('.login').style.display = 'none';
+        }
+
+        function loginBlk(){
+            selectChoice('login');
+        
+            document.querySelector('.signup').style.display = 'none';
+            document.querySelector('.login').style.display = 'block';
+        }
+
+        function selectChoice(choice) {
+            const login = document.getElementById('login');
+            const signup = document.getElementById('signup');
+        
+            login.classList.remove('selected');
+            signup.classList.remove('selected');
+        
+            document.getElementById(choice).classList.add('selected');
+        }
+
+        function verify(email){
+            //const email=document.getElementById(email);
+            //backend for verification
+
+            document.querySelector('.form').style.display = 'none';
+            document.querySelector('.verification').style.display = 'block';
+        }
+        
+    </script>
+
+    <script src="login.js"></script>
+    <title>login</title>
+</head>
+<body>
+    <div style="display: flex; height: 100vh; align-items: center; justify-content: center;">
+    <div class="form">
+             <center><p style="margin: 20px 0 25px;color: rgba(36, 219, 179, 0.89);font-size: 30px;margin: 20px 0 25px;">
+            <b>E-Pharma</b>
+        </p><hr style="margin: 20px 0 15px;"></center>
+
+        <ul>
+            <li id="login" class="choice selected"><a onclick=loginBlk()>Login</a></li>
+            <li id="signup" class="choice"><a onclick=signupBlk()>SignUP</a></li>
+        </ul>   
+
+        <form class="login" id="loginform" onsubmit="handleLogin(event)">
+            <p></p>
+            <label for="email">Enter Email:</label>
+            <input required type="email" id="loginEmail" name="email" placeholder="example123@xyz.com">
+
+            <p style="margin: 8px;"></p>
+            <label for="password">Enter Password:</label>
+            <input required type="password" id="loginPassword" name="password" placeholder="***********">
+
+            <center style="margin: 8px 0 0px;"><a href="#" style="color: white;">Forgotten password?</a></center>
+            <center><button type="submit" class="submit">Login</button></center>
+            <center><p id="loginError" style="color: red;"></p></center>
+        </form>
+
+
+        <form class="signup" id = 'signupform' onsubmit="handleSignup(event)">
+            <p></p>
+            <label for="email">Enter Email:</label>
+            <input required type="email" id="signupEmail" name="email" placeholder="example123@xyz.com">
+
+            <p style="margin: 8px;"></p>
+            <label for="password">Create Password:</label>
+            <input required type="password" id="signupPassword" name="password" placeholder="********">
+
+            <p style="margin: 8px;"></p>
+            <label for="phone">Phone: </label>
+            <input type="number" name="phone" id="signupPhone" placeholder="Enter phone number">
+
+            <p style="margin: 8px;"></p>
+            <label for="state">State:</label>
+            <input type="text" name="state" id="signupState" placeholder="Enter state">
+
+            <p style="margin: 8px;"></p>
+            <label for="city">City:</label>
+            <input type="text" name="city" id="signupCity" placeholder="Enter city">
+
+            <p style="margin: 8px;"></p>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="signupAddress" placeholder="Enter address">
+
+            <p style="margin: 8px;"></p>
+            <label for="pincode">Pincode:</label>
+            <input type="number" name="pincode" id="signupPincode" placeholder="Enter pincode">
+
+            <center><button type="submit" class="submit">Sign Up</button></center>
+            <center><p id="signupError" style="color: red;"></center>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
